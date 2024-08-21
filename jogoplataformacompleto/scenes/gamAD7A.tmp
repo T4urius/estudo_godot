@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cncykdoj5x70y"]
+[gd_scene load_steps=15 format=3 uid="uid://cncykdoj5x70y"]
 
 [ext_resource type="PackedScene" uid="uid://cghanlvkbyeqw" path="res://scenes/player.tscn" id="1_m5kvm"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_x7ghk"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://c7as24imiwn1v" path="res://scenes/killzone.tscn" id="5_nkvjb"]
 [ext_resource type="PackedScene" uid="uid://cct047yp4wy5o" path="res://scenes/slime.tscn" id="6_rrstm"]
 [ext_resource type="FontFile" uid="uid://ccm382tcd8fvf" path="res://assets/fonts/PixelOperator8.ttf" id="7_mes4t"]
-[ext_resource type="PackedScene" uid="uid://deo8g5kqhj5gu" path="res://scenes/slime2.tscn" id="9_okkru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuvdb"]
 texture = ExtResource("2_j00xi")
@@ -345,6 +344,3 @@ offset_bottom = 134.0
 theme_override_fonts/font = ExtResource("7_mes4t")
 theme_override_font_sizes/font_size = 8
 text = "Não caia..."
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("9_okkru")]
-position = Vector2(88, 5)
