@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkxpxon2dyl5"]
+
+[ext_resource type="Script" path="res://script/combat_dummy.gd" id="1_i3j1b"]
+[ext_resource type="Texture2D" uid="uid://bbhu0cawdg0ch" path="res://sprites/CombatDummy_DeathSprites.png" id="2_0xace"]
+[ext_resource type="PackedScene" uid="uid://dsw11214ic4hf" path="res://scene/floating_text.tscn" id="2_d6qlk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsp10"]
+size = Vector2(19, 34)
+
+[node name="CombatDummy" type="CharacterBody2D"]
+script = ExtResource("1_i3j1b")
+damage_node = ExtResource("2_d6qlk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0xace")
+hframes = 5
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_vsp10")

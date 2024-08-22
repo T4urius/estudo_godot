@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://sq5nxjwaptc3"]
+
+[ext_resource type="PackedScene" uid="uid://bcdgnqbl13te3" path="res://scene/player.tscn" id="1_1pysm"]
+[ext_resource type="Script" path="res://script/inventory.gd" id="1_bc5lb"]
+[ext_resource type="Script" path="res://script/manager.gd" id="1_f0tot"]
+[ext_resource type="PackedScene" uid="uid://y8pu1bo4e3t4" path="res://scene/slot.tscn" id="2_orolo"]
+[ext_resource type="Script" path="res://script/character.gd" id="3_g188x"]
+[ext_resource type="PackedScene" uid="uid://dkxpxon2dyl5" path="res://scene/combat_dummy.tscn" id="5_8kd12"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Manager" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f0tot")
+
+[node name="Inventory" type="GridContainer" parent="UI/Manager"]
+layout_mode = 0
+offset_top = 218.0
+offset_right = 216.0
+offset_bottom = 346.0
+scale = Vector2(1.5, 1.5)
+columns = 5
+script = ExtResource("1_bc5lb")
+
+[node name="Slot" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot2" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot3" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot4" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot5" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot6" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot7" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot8" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot9" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot10" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot11" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot12" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot13" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot14" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Slot15" parent="UI/Manager/Inventory" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Character" type="GridContainer" parent="UI/Manager"]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 280.0
+offset_right = 740.0
+offset_bottom = 320.0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_g188x")
+
+[node name="Slot" parent="UI/Manager/Character" instance=ExtResource("2_orolo")]
+layout_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("1_1pysm")]
+position = Vector2(514, 310)
+scale = Vector2(3, 3)
+
+[node name="CombatDummy" parent="." instance=ExtResource("5_8kd12")]
+position = Vector2(727, 408)
+scale = Vector2(3, 3)

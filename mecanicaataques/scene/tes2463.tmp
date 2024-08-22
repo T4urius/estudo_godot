@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://sq5nxjwaptc3"]
+
+[ext_resource type="PackedScene" uid="uid://bcdgnqbl13te3" path="res://scene/player.tscn" id="1_1pysm"]
+[ext_resource type="Resource" uid="uid://bgp0xxqohh6ub" path="res://script/resource/SoldierSword.tres" id="2_y8kj5"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_1pysm")]
+position = Vector2(346, 329)
+scale = Vector2(3, 3)
+current_item = ExtResource("2_y8kj5")
