@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dk4owtd3lds2c"
+path="res://.godot/imported/example_music_01.ogg-f9cd64c6e9b8140a2b3de2f7c0a1cd9c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Adventure Sprites/example_music/example_music_01.ogg"
+dest_files=["res://.godot/imported/example_music_01.ogg-f9cd64c6e9b8140a2b3de2f7c0a1cd9c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

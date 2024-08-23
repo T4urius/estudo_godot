@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c52qh45r1yxn1"
+path="res://.godot/imported/treasure-open.wav-285745b889437da4a87dc3cb1434ba95.sample"
+
+[deps]
+
+source_file="res://Adventure Sprites/Audios/treasure-open.wav"
+dest_files=["res://.godot/imported/treasure-open.wav-285745b889437da4a87dc3cb1434ba95.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

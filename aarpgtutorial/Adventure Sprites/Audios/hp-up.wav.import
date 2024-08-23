@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdyn286pvxq30"
+path="res://.godot/imported/hp-up.wav-eb07de2bc8a0bc0b8ad2f2e153ea159d.sample"
+
+[deps]
+
+source_file="res://Adventure Sprites/Audios/hp-up.wav"
+dest_files=["res://.godot/imported/hp-up.wav-eb07de2bc8a0bc0b8ad2f2e153ea159d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
