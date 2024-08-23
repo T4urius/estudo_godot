@@ -1,4 +1,4 @@
-Meus projetos de estudo do GODOT.
+Meus projetos de estudo do GODOT (versão 4.3).
 
 Plataforma2d -> Jogo plataforma básico. (sem fases adidionais, sem fim de fase)
 
