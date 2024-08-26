@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkh3ybn1bj42m"
-path="res://.godot/imported/Props.png-a5209ba62f3b945b59cf99318c35ef34.ctex"
+uid="uid://ethyv0d5v7qk"
+path="res://.godot/imported/DestroySmoke.png-4c509d84002ea89209f31fc8182dda06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Adventure Sprites/Sprites/Props.png"
-dest_files=["res://.godot/imported/Props.png-a5209ba62f3b945b59cf99318c35ef34.ctex"]
+source_file="res://Enemies/Slime/DestroySmoke.png"
+dest_files=["res://.godot/imported/DestroySmoke.png-4c509d84002ea89209f31fc8182dda06.ctex"]
 
 [params]
 

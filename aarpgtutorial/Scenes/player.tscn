@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://1wijp2ue6u56"]
+[gd_scene load_steps=32 format=3 uid="uid://1wijp2ue6u56"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_vhjg6"]
 [ext_resource type="Texture2D" uid="uid://v62txnpsulav" path="res://Adventure Sprites/Sprites/PlayerSprite02.png" id="2_umkhg"]
@@ -9,6 +9,9 @@
 [ext_resource type="Script" path="res://Scripts/state_walk.gd" id="5_h7hq1"]
 [ext_resource type="Script" path="res://Scripts/state_attack.gd" id="6_f504e"]
 [ext_resource type="AudioStream" uid="uid://bmlnyj351iilo" path="res://Adventure Sprites/Audios/SwordSwoosh.wav" id="8_bxgfe"]
+[ext_resource type="Script" path="res://Scripts/PlayerInteractionHost.gd" id="10_11rsp"]
+[ext_resource type="PackedScene" uid="uid://wmrx4574wlml" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_jfpb1"]
+[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="11_ndvc2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxbgo"]
 radius = 9.0
@@ -63,6 +66,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%AttackHurtBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
+}
 
 [sub_resource type="Animation" id="Animation_cns81"]
 resource_name = "attack_down"
@@ -115,6 +130,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%AttackHurtBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 8)]
 }
 
 [sub_resource type="Animation" id="Animation_d58ry"]
@@ -169,6 +196,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%AttackHurtBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(18, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_koyxj"]
 resource_name = "attack_up"
@@ -222,6 +261,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%AttackHurtBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_xnaya"]
 resource_name = "no_attack"
@@ -248,6 +299,9 @@ _data = {
 "no_attack": SubResource("Animation_xnaya")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ja3i"]
+radius = 20.0
+
 [sub_resource type="Animation" id="Animation_6nmru"]
 length = 0.001
 tracks/0/type = "value"
@@ -261,6 +315,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 10)]
 }
 
 [sub_resource type="Animation" id="Animation_vme43"]
@@ -279,6 +345,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [21, 23]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 10)]
+}
 
 [sub_resource type="Animation" id="Animation_ygyuy"]
 resource_name = "attack_side"
@@ -296,6 +374,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [27, 29]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 10)]
+}
 
 [sub_resource type="Animation" id="Animation_b88u2"]
 resource_name = "attack_up"
@@ -312,6 +402,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [24, 26]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -17)]
 }
 
 [sub_resource type="Animation" id="Animation_6w2j4"]
@@ -468,6 +570,17 @@ libraries = {
 }
 autoplay = "no_attack"
 
+[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("10_jfpb1")]
+unique_name_in_owner = true
+position = Vector2(0, 10)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_1ja3i")
+debug_color = Color(1, 0.223529, 0.172549, 0.419608)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_vii27")
@@ -487,9 +600,14 @@ script = ExtResource("6_f504e")
 attack_sound = ExtResource("8_bxgfe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+editor_draw_limits = true
+script = ExtResource("11_ndvc2")
 
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("8_bxgfe")
 max_polyphony = 4
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("10_11rsp")
