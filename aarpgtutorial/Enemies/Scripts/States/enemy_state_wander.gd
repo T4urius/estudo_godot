@@ -20,8 +20,8 @@ func enter() -> void:
 	var rand = randi_range(0, 3)
 	_direction = enemy.DIR_4[rand]
 	enemy.velocity = _direction * wander_speed
-	enemy.SetDirection(_direction)
-	enemy.UpdateAnimation(anim_name)
+	enemy.set_direction(_direction)
+	enemy.update_animation(anim_name)
 	pass
 	
 func exit() -> void:
