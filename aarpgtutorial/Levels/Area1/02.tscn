@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://qa4kqdjgxopa"]
+
+[ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_nqu01"]
+[ext_resource type="PackedScene" uid="uid://dobl5ru3lu8cm" path="res://Adventure Sprites/Tile Map/grass-01.tscn" id="1_oachw"]
+[ext_resource type="PackedScene" uid="uid://c02rjw801sm" path="res://Levels/player_spawn.tscn" id="2_fvaki"]
+[ext_resource type="PackedScene" uid="uid://cxlh20u2bh43q" path="res://Props/Plants/plant.tscn" id="3_1bh1n"]
+[ext_resource type="PackedScene" uid="uid://bk0gwo4fmwhk2" path="res://Enemies/Slime/slime.tscn" id="4_b2ure"]
+[ext_resource type="PackedScene" uid="uid://w1iira7y2uv2" path="res://Levels/level_transition.tscn" id="6_q0wac"]
+
+[node name="01" type="Node2D"]
+script = ExtResource("1_nqu01")
+
+[node name="TileMap" parent="." instance=ExtResource("1_oachw")]
+position = Vector2(0, -18)
+layer_0/tile_data = PackedInt32Array(0, 196608, 3, 65536, 720896, 6, 131072, 720896, 7, 196608, 655360, 4, 262144, 655360, 6, 327680, 655360, 6, 393216, 655360, 6, 458752, 655360, 6, 524288, 655360, 6, 1, 196608, 3, 65537, 720896, 6, 131073, 720896, 7, 196609, 65536, 3, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 720896, 6, 2, 196608, 3, 65538, 720896, 6, 131074, 720896, 7, 196610, 262144, 7, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 720896, 6, 3, 196608, 3, 65539, 720896, 6, 131075, 720896, 7, 196611, 262144, 7, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 720896, 6, 4, 196608, 3, 65540, 720896, 6, 131076, 720896, 7, 196612, 262144, 7, 262148, 262144, 7, 327684, 262144, 7, 393220, 0, 0, 458756, 0, 0, 524292, 720896, 6, 5, 917504, 5, 65541, 917504, 6, 131077, 917504, 7, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 720896, 6, 6, 196608, 3, 65542, 196608, 3, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 720896, 6, 7, 196608, 3, 65543, 196608, 3, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 720896, 6, 8, 196608, 3, 65544, 196608, 3, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 720896, 6, 9, 917504, 5, 65545, 917504, 6, 131081, 655360, 7, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 720896, 6, 10, 720896, 5, 65546, 786432, 6, 131082, 786432, 7, 196618, 0, 0, 262154, 327680, 0, 327690, 327680, 1, 393226, 327680, 2, 458762, 0, 0, 524298, 720896, 6, 11, 720896, 5, 65547, 786432, 6, 131083, 786432, 7, 196619, 0, 0, 262155, 393216, 0, 327691, 393216, 1, 393227, 393216, 2, 458763, 0, 0, 524299, 720896, 6, 12, 786432, 5, 65548, 786432, 6, 131084, 786432, 7, 196620, 0, 0, 262156, 458752, 0, 327692, 458752, 1, 393228, 458752, 2, 458764, 0, 0, 524300, 720896, 6, 13, 720896, 5, 65549, 851968, 6, 131085, 851968, 7, 196621, 131072, 2, 262157, 0, 0, 327693, 0, 0, 393229, 0, 0, 458765, 0, 0, 524301, 720896, 6, 14, 720896, 5, 65550, 851968, 6, 131086, 851968, 7, 196622, 917504, 4, 262158, 917504, 5, 327694, 917504, 6, 393230, 917504, 6, 458766, 917504, 6, 524302, 917504, 6)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("2_fvaki")]
+position = Vector2(403, 94)
+
+[node name="Plant" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(51, 131)
+
+[node name="Plant2" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(86, 131)
+
+[node name="Plant3" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(50, 163)
+
+[node name="Plant4" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(87, 162)
+
+[node name="Plant5" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(136, 11)
+
+[node name="Plant6" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(88, 11)
+
+[node name="Plant7" parent="." instance=ExtResource("3_1bh1n")]
+position = Vector2(47, 11)
+
+[node name="Slime" parent="." instance=ExtResource("4_b2ure")]
+position = Vector2(63, 237)
+
+[node name="Slime2" parent="." instance=ExtResource("4_b2ure")]
+position = Vector2(435, 234)
+
+[node name="Slime3" parent="." instance=ExtResource("4_b2ure")]
+position = Vector2(406, 10)
+
+[node name="LevelTransition" parent="." instance=ExtResource("6_q0wac")]
+position = Vector2(240, -16)
+level = "res://Levels/Area1/01.tscn"
+size = 3
+side = 2

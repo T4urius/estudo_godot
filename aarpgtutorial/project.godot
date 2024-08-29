@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="AARPGTutorial"
-run/main_scene="res://Scenes/playground.tscn"
+run/main_scene="res://Levels/Area1/01.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 LevelManager="*res://00_Globals/global_level_manager.gd"
+PlayerHud="*res://GUI/PlayerHud/player_hud.tscn"
 PlayerManager="*res://00_Globals/global_player_manager.gd"
+SceneTransition="*res://GUI/SceneTransition/scene_transition.tscn"
 
 [display]
 
