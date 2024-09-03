@@ -42,7 +42,7 @@ func handle_input(_event: InputEvent) -> State:
 	
 func _player_damaged(_hurt_box: HurtBox) -> void:
 	hurt_box = _hurt_box
-	state_machine.ChangeState(self)
+	state_machine.change_state(self)
 	pass
 	
 func _animation_finished(_a: String) -> void:

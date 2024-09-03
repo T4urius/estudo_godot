@@ -12,9 +12,11 @@ var _direction : Vector2
 var _animation_finished : bool = false
 
 func init() -> void:
+	enemy.enemy_damaged.connect(_on_enemy_damaged)
 	pass
 
 func enter() -> void:
+	print("entrou no stun do inimigo")
 	enemy.invunerable = true
 	_animation_finished = false
 	
@@ -43,7 +45,7 @@ func physics(_delta: float) -> EnemyState:
 	
 func _on_enemy_damaged(hurt_box: HurtBox) -> void:
 	_damage_position = hurt_box.global_position
-	state_machine.ChangeState(self)
+	state_machine.change_state(self)
 
 func _on_animation_finished(_a : String) -> void:
 	_animation_finished = true
