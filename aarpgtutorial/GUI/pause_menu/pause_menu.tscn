@@ -1,12 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://duagnoogovv4i"]
+[gd_scene load_steps=8 format=3 uid="uid://duagnoogovv4i"]
 
 [ext_resource type="Script" path="res://GUI/pause_menu/pause_menu.gd" id="1_qh7uq"]
+[ext_resource type="Texture2D" uid="uid://deaykqms00iv0" path="res://Items/Sprites/items.png" id="2_0kd7k"]
+[ext_resource type="Script" path="res://GUI/pause_menu/Inventory/scripts/inventory_ui.gd" id="3_pamks"]
+[ext_resource type="PackedScene" uid="uid://b36v45dvmysgl" path="res://GUI/pause_menu/Inventory/inventory_slot.tscn" id="3_rtmv5"]
+[ext_resource type="Resource" uid="uid://bmyt7i1rc4r2h" path="res://GUI/pause_menu/Inventory/player_inventory.tres" id="4_7dkvb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl4y4"]
+atlas = ExtResource("2_0kd7k")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdau3"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_fl4y4")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_qh7uq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,38 +42,94 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.172549, 0.172549, 0.172549, 0.486275)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -33.0
-offset_right = 34.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button_Save" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Save"
-
-[node name="Button_Load" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Load"
-
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Control"]
 modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.0
-offset_top = -67.0
-offset_right = 37.0
-offset_bottom = -44.0
+offset_left = -207.0
+offset_top = -119.0
+offset_right = -131.0
+offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "[ paused ]"
+
+[node name="ItemDescription" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = 20.0
+offset_right = -15.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = 49.0
+offset_right = -109.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_Save" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="Button_Load" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Load"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 64.0
+offset_right = 227.0
+offset_bottom = 152.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qdau3")
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("3_pamks")
+data = ExtResource("4_7dkvb")
+
+[node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rtmv5")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rtmv5")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rtmv5")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rtmv5")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rtmv5")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_rtmv5")]
+layout_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4

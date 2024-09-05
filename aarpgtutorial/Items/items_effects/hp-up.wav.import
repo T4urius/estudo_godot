@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bdyn286pvxq30"
-path="res://.godot/imported/hp-up.wav-eb07de2bc8a0bc0b8ad2f2e153ea159d.sample"
+path="res://.godot/imported/hp-up.wav-f6b45f730ca00c894db561bb6caa4bde.sample"
 
 [deps]
 
-source_file="res://Adventure Sprites/Audios/hp-up.wav"
-dest_files=["res://.godot/imported/hp-up.wav-eb07de2bc8a0bc0b8ad2f2e153ea159d.sample"]
+source_file="res://Items/items_effects/hp-up.wav"
+dest_files=["res://.godot/imported/hp-up.wav-f6b45f730ca00c894db561bb6caa4bde.sample"]
 
 [params]
 
