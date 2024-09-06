@@ -1,6 +1,8 @@
 @tool 
 class_name ItemPickup extends CharacterBody2D
 
+signal picked_up
+
 @export var item_data: ItemData : set = _set_item_data
 
 @onready var area: Area2D = $Area2D
@@ -30,6 +32,7 @@ func item_picked_up() -> void:
 	area.body_entered.disconnect(_on_body_entered)
 	audio_stream_player.play()
 	visible = false
+	picked_up.emit()
 	await audio_stream_player.finished
 	queue_free()
 	pass

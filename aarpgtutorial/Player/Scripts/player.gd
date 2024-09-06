@@ -1,8 +1,9 @@
 class_name Player extends CharacterBody2D
 
-var cardinal_direction: Vector2 = Vector2.DOWN
+signal DirectionChanged(new_direction: Vector2)
+signal player_damaged(hurt_box: HurtBox)
+
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
-var direction : Vector2 = Vector2.ZERO
 
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
@@ -10,8 +11,8 @@ var direction : Vector2 = Vector2.ZERO
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
-signal DirectionChanged(new_direction: Vector2)
-signal player_damaged(hurt_box: HurtBox)
+var cardinal_direction: Vector2 = Vector2.DOWN
+var direction : Vector2 = Vector2.ZERO
 
 var invunerable: bool = false
 var hp: int = 6

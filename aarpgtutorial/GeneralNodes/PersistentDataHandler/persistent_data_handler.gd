@@ -14,6 +14,7 @@ func set_value() -> void:
 func get_value() -> void:
 	value = SaveManager.check_persistent_value(_get_name())
 	data_loaded.emit()
+	print(value)
 	pass
 	
 func _get_name() -> String:

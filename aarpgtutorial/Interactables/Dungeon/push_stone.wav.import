@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b05ij5y0fn1sn"
-path="res://.godot/imported/push_stone.wav-1eda9050f31172714a54aabadd673911.sample"
+path="res://.godot/imported/push_stone.wav-558d57c7d7a3b4de07fe59a1cc1355fd.sample"
 
 [deps]
 
-source_file="res://Adventure Sprites/Audios/push_stone.wav"
-dest_files=["res://.godot/imported/push_stone.wav-1eda9050f31172714a54aabadd673911.sample"]
+source_file="res://Interactables/Dungeon/push_stone.wav"
+dest_files=["res://.godot/imported/push_stone.wav-558d57c7d7a3b4de07fe59a1cc1355fd.sample"]
 
 [params]
 
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=0
+edit/loop_mode=2
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0

@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwr8c3c64oqw0"]
+
+[ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_lgu1c"]
+[ext_resource type="PackedScene" uid="uid://ci1lfylw26iur" path="res://Tile Map/dungeon_01.tscn" id="1_q368b"]
+[ext_resource type="PackedScene" uid="uid://c02rjw801sm" path="res://Levels/player_spawn.tscn" id="3_urmvr"]
+[ext_resource type="PackedScene" uid="uid://w1iira7y2uv2" path="res://Levels/level_transition.tscn" id="4_g35ok"]
+[ext_resource type="PackedScene" uid="uid://bmoqjfw6307pg" path="res://Interactables/Dungeon/pressure_plate.tscn" id="5_kyj5m"]
+[ext_resource type="PackedScene" uid="uid://6ar5unbgcecy" path="res://Interactables/Dungeon/barred_door.tscn" id="6_t7ii3"]
+[ext_resource type="PackedScene" uid="uid://uj85ff01036q" path="res://Interactables/Dungeon/pushable_statue.tscn" id="7_yw5rg"]
+
+[node name="01" type="Node2D"]
+script = ExtResource("1_lgu1c")
+
+[node name="Dungeon_01_TileMap" parent="." instance=ExtResource("1_q368b")]
+layer_0/tile_data = PackedInt32Array(0, 589824, 0, 65536, 589824, 5, 1, 655360, 0, 65537, 655360, 1, 2, 655360, 0, 65538, 720896, 1, 3, 262144, 5, 65539, 262144, 6, 4, 458752, 5, 5, 262144, 5, 6, 327680, 5, 7, 393216, 5, 8, 458752, 5, 9, 262144, 5, 10, 458752, 5, 11, 655360, 0, 12, 655360, 0, 13, 655360, 0, 14, 983040, 0, 65550, 983040, 1, 131086, 983040, 1, 196622, 983040, 1, 262158, 983040, 1, 327694, 983040, 1, 393230, 983040, 1, 458766, 983040, 1, 524302, 983040, 6, 524288, 589824, 6, 524289, 655360, 6, 524290, 720896, 6, 524291, 0, 7, 524292, 196608, 7, 524293, 0, 7, 524294, 65536, 7, 524295, 131072, 7, 524296, 196608, 7, 524297, 0, 7, 524298, 196608, 7, 524299, 917504, 6, 524300, 917504, 6, 524301, 917504, 6, 131072, 589824, 5, 196608, 589824, 5, 262144, 589824, 5, 327680, 589824, 5, 393216, 589824, 4, 458752, 589824, 5, 131073, 655360, 2, 131074, 720896, 2, 131075, 262144, 7, 65540, 458752, 6, 131076, 458752, 7, 65541, 262144, 6, 131077, 262144, 7, 65542, 327680, 6, 131078, 327680, 7, 65543, 393216, 6, 131079, 393216, 7, 65544, 458752, 6, 131080, 458752, 7, 65545, 262144, 6, 131081, 262144, 7, 65546, 458752, 6, 131082, 458752, 7, 65547, 786432, 1, 131083, 786432, 2, 65548, 851968, 1, 131084, 851968, 2, 65549, 917504, 1, 131085, 917504, 2, 393228, 851968, 4, 458764, 851968, 5, 393229, 917504, 4, 458765, 917504, 5, 393217, 655360, 4, 458753, 655360, 5, 393218, 720896, 4, 458754, 720896, 5, 196609, 655360, 3, 196610, 720896, 3, 262145, 655360, 3, 262146, 720896, 3, 327681, 655360, 3, 327682, 720896, 3, 196620, 851968, 3, 196621, 917504, 3, 262156, 851968, 3, 262157, 917504, 3, 327692, 851968, 3, 327693, 917504, 3, 393219, 0, 5, 458755, 0, 6, 393220, 196608, 5, 458756, 196608, 6, 393221, 0, 5, 458757, 0, 6, 393222, 65536, 5, 458758, 65536, 6, 393223, 131072, 5, 458759, 131072, 6, 393224, 196608, 5, 458760, 196608, 6, 393225, 0, 5, 458761, 0, 6, 393226, 196608, 5, 458762, 196608, 6, 393227, 786432, 4, 458763, 786432, 5, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_urmvr")]
+position = Vector2(224, 173)
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_g35ok")]
+position = Vector2(225, 203)
+level = "res://Levels/Area1/01.tscn"
+target_transition_area = "LevelTransition3"
+center_player = true
+side = 3
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_g35ok")]
+position = Vector2(224, 80)
+level = "res://Levels/Dungeon/02.tscn"
+side = 2
+
+[node name="PressurePlate" parent="." instance=ExtResource("5_kyj5m")]
+position = Vector2(325, 142)
+
+[node name="BarredDoor" parent="." instance=ExtResource("6_t7ii3")]
+position = Vector2(190, 86)
+
+[node name="PushableStatue" parent="." instance=ExtResource("7_yw5rg")]
+position = Vector2(164, 126)
+
+[connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
+[connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="close_door"]

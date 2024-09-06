@@ -1,20 +1,21 @@
-[gd_scene load_steps=44 format=3 uid="uid://1wijp2ue6u56"]
+[gd_scene load_steps=46 format=3 uid="uid://1wijp2ue6u56"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_vhjg6"]
+[ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_vhjg6"]
 [ext_resource type="Texture2D" uid="uid://v62txnpsulav" path="res://Adventure Sprites/Sprites/PlayerSprite02.png" id="2_umkhg"]
-[ext_resource type="Script" path="res://Scripts/player_state_machine.gd" id="3_5me4y"]
+[ext_resource type="Script" path="res://Player/Scripts/player_state_machine.gd" id="3_5me4y"]
 [ext_resource type="Texture2D" uid="uid://bvpjk4vxarjjn" path="res://Adventure Sprites/Sprites/Shadow.png" id="3_dg375"]
 [ext_resource type="Texture2D" uid="uid://7xt8cu4g02f7" path="res://Adventure Sprites/Sprites/AttackSprite01.png" id="3_tnjsu"]
-[ext_resource type="Script" path="res://Scripts/states/state_idle.gd" id="4_50k4o"]
-[ext_resource type="Script" path="res://Scripts/states/state_walk.gd" id="5_h7hq1"]
-[ext_resource type="Script" path="res://Scripts/states/state_attack.gd" id="6_f504e"]
+[ext_resource type="Script" path="res://Player/Scripts/states/state_idle.gd" id="4_50k4o"]
+[ext_resource type="Script" path="res://Player/Scripts/states/state_walk.gd" id="5_h7hq1"]
+[ext_resource type="Script" path="res://Player/Scripts/states/state_attack.gd" id="6_f504e"]
 [ext_resource type="AudioStream" uid="uid://bmlnyj351iilo" path="res://Adventure Sprites/Audios/SwordSwoosh.wav" id="8_bxgfe"]
-[ext_resource type="Script" path="res://Scripts/player_interaction_host.gd" id="10_11rsp"]
+[ext_resource type="Script" path="res://Player/Scripts/player_interaction_host.gd" id="10_11rsp"]
 [ext_resource type="PackedScene" uid="uid://wmrx4574wlml" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_jfpb1"]
-[ext_resource type="Script" path="res://Scripts/PlayerCamera.gd" id="11_ndvc2"]
-[ext_resource type="Script" path="res://Scripts/states/state_stun.gd" id="11_v3lng"]
+[ext_resource type="Script" path="res://Player/Scripts/PlayerCamera.gd" id="11_ndvc2"]
+[ext_resource type="Script" path="res://Player/Scripts/states/state_stun.gd" id="11_v3lng"]
 [ext_resource type="PackedScene" uid="uid://cpmo3s5d2j8pj" path="res://GeneralNodes/Hitbox/hit_box.tscn" id="13_5sjtj"]
 [ext_resource type="AudioStream" uid="uid://da55hxa0bi0cd" path="res://Adventure Sprites/Audios/hit_player.wav" id="14_6h4i5"]
+[ext_resource type="Script" path="res://Player/Scripts/push_area.gd" id="14_djou1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jxbgo"]
 radius = 9.0
@@ -597,6 +598,9 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6la3j"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w6wa"]
+size = Vector2(20, 14)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_uje7x"]
 
 [sub_resource type="Animation" id="Animation_f04g1"]
@@ -673,6 +677,7 @@ wall_min_slide_angle = 0.174533
 script = ExtResource("1_vhjg6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_jxbgo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -752,6 +757,18 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
 shape = SubResource("RectangleShape2D_6la3j")
 debug_color = Color(9.62615e-07, 0.762747, 0.528112, 0.42)
+
+[node name="PushArea" type="Area2D" parent="Interactions"]
+position = Vector2(0, 6)
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("14_djou1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_6w6wa")
+debug_color = Color(0.761552, 0.506576, 1, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("13_5sjtj")]
 collision_layer = 2
